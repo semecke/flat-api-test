@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+    php_flag display_startup_errors on
+    php_flag display_errors on
+
+    Options -MultiViews
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ /home/u397109617/domains/angelss.pe.hu/public_html/public/index.php [QSA,L]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    <IfModule mod_alias.c>
+        RedirectMatch 302 ^/$ /index.php/
+    </IfModule>
+</IfModule>
